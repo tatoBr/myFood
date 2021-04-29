@@ -19,23 +19,14 @@ app.use( express.json() );
 
 
 //importing routers
+const userRouter = require( './routes/user' );
 const productCategoryRouter = require( './routes/productCategory' );
 const productRouter = require( './routes/product' );
 
 //setting Up routes
+app.use('/users', userRouter );
 app.use('/products-category', productCategoryRouter );
-app.use('/product', productRouter );
-
-app.get('/',(req, res, next)=>{
-    console.log( 'a' )
-    try {
-        let error = new Error('made up error');
-        error.status = 401;
-        throw error;
-    } catch ( error ) {
-        next( error )
-    }
-});
+app.use('/products', productRouter );
 
 
 //not found route handler
