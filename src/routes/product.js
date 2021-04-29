@@ -4,10 +4,10 @@ const Controller = require( '../controllers/product' );
 const router = Router();
 const controller = new Controller();
 
-router.post( '/', controller.postProduct );
-router.get( '/', controller.getProduct );
-router.get( '/:id', controller.getProduct );
-router.patch( '/:id', controller.patchProduct );
-router.delete( '/:id', controller.deleteProduct );
+router.post( '/', controller.post );
+router.get( '/', controller.get );
+router.get( '/:id', controller.get );
+router.patch( '/:id', controller.patch );
+router.delete( '/:id', controller.delete );
 
 module.exports = router;
