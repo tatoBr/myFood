@@ -1,8 +1,9 @@
 if( process.env.NODE_ENV !== "production" ){
     require("dotenv").config();
 }
-//importing core modules
 
+//importing core modules
+const path = require('path');
 
 //importing npm modules
 const express = require('express');
@@ -19,9 +20,11 @@ app.use( express.json() );
 
 //importing routers
 const productCategoryRouter = require( './routes/productCategory' );
+const productRouter = require( './routes/product' );
 
 //setting Up routes
 app.use('/products-category', productCategoryRouter );
+app.use('/product', productRouter );
 
 app.get('/',(req, res, next)=>{
     console.log( 'a' )
