@@ -2,7 +2,7 @@
   "name": "myfood",
   "version": "1.0.0",
   "description": "a simple ifood clone, almost.",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
