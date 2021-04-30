@@ -27,6 +27,6 @@ const schema = new Schema({
         type: Schema.Types.Boolean,
         default: true
     }
-});
+},{ timestamps: true });
 
 module.exports = mongoose.model('Product', schema );

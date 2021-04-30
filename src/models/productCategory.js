@@ -24,6 +24,6 @@ const schema = new mongoose.Schema({
         type: Schema.Types.Boolean,
         default: true
     }
-});
+},{ timestamps: true });
 
 module.exports = mongoose.model('Category', schema );
