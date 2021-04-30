@@ -2,14 +2,23 @@ if( process.env.NODE_ENV !== "production" ){
     require("dotenv").config();
 }
 
+
 //importing core modules
-const path = require('path');
+const path = require( 'path' );
 
 //importing npm modules
-const express = require('express');
+const express = require( 'express' );
+const mongoose = require( 'mongoose' );
 
 //importing project modules
 const defaultController = require('./controllers/default');
+const dbCongif = require('./config/database' );
+
+//connect to database
+mongoose.connect( dbCongif.uri, dbCongif.options, err=>{
+    if( err ) return console.error( err.message, err.stack );
+    console.log( 'db connected' );
+});
 
 const app = express();
 
